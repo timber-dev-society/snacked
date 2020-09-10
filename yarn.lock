@@ -1386,7 +1386,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.5.1":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.5.1, @babel/runtime@npm:^7.5.5":
   version: 7.11.2
   resolution: "@babel/runtime@npm:7.11.2"
   dependencies:
@@ -1745,6 +1745,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stitches/core@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@stitches/core@npm:0.0.2"
+  dependencies:
+    "@types/node": ^13.11.1
+    tslib: ^1.11.1
+  checksum: 8dd0f12f8e5bad3763dbdc99f56efd5a644c80890f9c0c568dae725d99d7cbb025ca14f65485913be2f387fcb1482bb4bbb8f67b479fa6ff541130019d0fb0d9
+  languageName: node
+  linkType: hard
+
+"@stitches/react@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@stitches/react@npm:0.0.2"
+  dependencies:
+    "@stitches/core": ^0.0.2
+    "@types/node": ^13.11.1
+    "@types/react-test-renderer": ^16.9.3
+    tslib: ^1.11.1
+  peerDependencies:
+    react: ^16.13.1
+  checksum: a6c69afde2336de3ed5848389c86b4531f6e660b929dafc63ffe5aecba020ff85c294a0471e8da7f9e03710dfe8b3134c7c1b841dfdbd7df905de6734ccd39d3
+  languageName: node
+  linkType: hard
+
 "@svgr/babel-plugin-add-jsx-attribute@npm:^4.2.0":
   version: 4.2.0
   resolution: "@svgr/babel-plugin-add-jsx-attribute@npm:4.2.0"
@@ -2058,6 +2082,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^13.11.1":
+  version: 13.13.17
+  resolution: "@types/node@npm:13.13.17"
+  checksum: a2839577e8723182b22974d1024507e6665a688f9ac9cd4bee29250d505e38c1f7eab9d216036c4d2de1242265629f9fc3f085801b8901e65de03d724796d094
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -2085,6 +2116,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 899161f6c810d98a76f1dbb6d5714b5208b7e67eb451804fa42b2539053c04754dbc883009eef4196d2062b48fb8649ee019f767106b5db26a644af93b0844bd
+  languageName: node
+  linkType: hard
+
+"@types/react-test-renderer@npm:^16.9.3":
+  version: 16.9.3
+  resolution: "@types/react-test-renderer@npm:16.9.3"
+  dependencies:
+    "@types/react": "*"
+  checksum: 7a13bf1a73adb0adc15545a15dbacab2058fd10d4b3c09cdbfc42bcc31d87b3eb2882daadb50f9ca445b3da52791dad1e63385df874ddbcbf24784d269a77dec
   languageName: node
   linkType: hard
 
@@ -6634,6 +6674,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"hoist-non-react-statics@npm:^3.3.0":
+  version: 3.3.2
+  resolution: "hoist-non-react-statics@npm:3.3.2"
+  dependencies:
+    react-is: ^16.7.0
+  checksum: 0149f2c7a4ffc9e5d0550ac3dd19592673c1c8f1d0881e8db5641502c5d16900ecbd4b70b50c4086d4cafb05d2b84ba01ac06ad575bdf3ef742c97893b7273d1
+  languageName: node
+  linkType: hard
+
 "hosted-git-info@npm:^2.1.4":
   version: 2.8.8
   resolution: "hosted-git-info@npm:2.8.8"
@@ -6905,6 +6954,13 @@ fsevents@^1.2.7:
   version: 1.10.0
   resolution: "immer@npm:1.10.0"
   checksum: aaa3c26db1754275f35a07f8c798c29b7492929c61114b968cb08f4b88acea705d1c333a25fdae57a9725ea41f35e74e1affa281de465eb14885676fe70efe0d
+  languageName: node
+  linkType: hard
+
+"immer@npm:^7.0.9":
+  version: 7.0.9
+  resolution: "immer@npm:7.0.9"
+  checksum: 9960f1d45483683e6d786e1c2ef44ba1ae42516743a034516b5e65229d8378afa5e1d41f81b143bcad61fa053481405622414b903f911ad867d25183495a3e02
   languageName: node
   linkType: hard
 
@@ -11403,10 +11459,44 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.12.0, react-is@npm:^16.8.1, react-is@npm:^16.8.4":
+"react-icons@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "react-icons@npm:3.11.0"
+  dependencies:
+    camelcase: ^5.0.0
+  peerDependencies:
+    react: "*"
+  checksum: 4c1a274aa3e7c02264619c8f0cf2b15759c878bafb3803473911eebb6b0ba8089fa7d7c1bdb721881c1ebd7aaef33f6630ba792f2acba1c8753fab52762456fe
+  languageName: node
+  linkType: hard
+
+"react-is@npm:^16.12.0, react-is@npm:^16.7.0, react-is@npm:^16.8.1, react-is@npm:^16.8.4, react-is@npm:^16.9.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 9659c004a370c15275784b1e848b735a7d403b5ba455e76b48d0840b05ee12bd79ef1dea520e7d70228367e0d95cc3cb894fbcbfda91c198b3339a96a0ecacc4
+  languageName: node
+  linkType: hard
+
+"react-redux@npm:^7.2.1":
+  version: 7.2.1
+  resolution: "react-redux@npm:7.2.1"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+    hoist-non-react-statics: ^3.3.0
+    loose-envify: ^1.4.0
+    prop-types: ^15.7.2
+    react-is: ^16.9.0
+  peerDependencies:
+    react: ^16.8.3
+    react-dom: "*"
+    react-native: "*"
+    redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: f182356b84ecf2bdd5f0c3bdf32991dafe86c198203b0aa5663068683a3f5def5cc0c5310e18b710c673b61d195b403a31e79cd668a36b2d841fd578bb417523
   languageName: node
   linkType: hard
 
@@ -11605,6 +11695,16 @@ fsevents@^1.2.7:
     indent-string: ^4.0.0
     strip-indent: ^3.0.0
   checksum: 55983b363f96f5b55663c001c1b9cb4e090d82e18ce6baad1076d6aac400306f8d2f45e9bdaf11e7a4400660b95a81e3251eb2c8cfc6df175105be5bb778fcd4
+  languageName: node
+  linkType: hard
+
+"redux@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "redux@npm:4.0.5"
+  dependencies:
+    loose-envify: ^1.4.0
+    symbol-observable: ^1.2.0
+  checksum: bf8fcfa44db283545db4dd56043de7e164852ac81b61503f2c06e2c9a0d5670338c3722fe642134afb633346507f1568a309da9153c95d2213a0ff404d31625a
   languageName: node
   linkType: hard
 
@@ -12749,12 +12849,18 @@ resolve@1.15.0:
   version: 0.0.0-use.local
   resolution: "stacked@workspace:."
   dependencies:
+    "@stitches/react": ^0.0.2
     "@testing-library/jest-dom": ^4.2.4
     "@testing-library/react": ^9.3.2
     "@testing-library/user-event": ^7.1.2
+    immer: ^7.0.9
+    prop-types: ^15.7.2
     react: ^16.13.1
     react-dom: ^16.13.1
+    react-icons: ^3.11.0
+    react-redux: ^7.2.1
     react-scripts: 3.4.3
+    redux: ^4.0.5
   languageName: unknown
   linkType: soft
 
@@ -13123,6 +13229,13 @@ resolve@1.15.0:
   languageName: node
   linkType: hard
 
+"symbol-observable@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "symbol-observable@npm:1.2.0"
+  checksum: b033c8d6fa245a68b421b891b2fe07a9459274593405250918c7aea7ce4e991a94b1491bae1b68a8d90bd05c35a2f6862258b97334931df13850fe4daa0b2999
+  languageName: node
+  linkType: hard
+
 "symbol-tree@npm:^3.2.2":
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
@@ -13420,6 +13533,13 @@ resolve@1.15.0:
   version: 1.11.1
   resolution: "tslib@npm:1.11.1"
   checksum: fcf33cc2bda03b44d1fb3d2faef38335456d0efee90807db42e241c8d60ac6e00167e16d3ab66d11b2fcacb135f30ec76c9dacc8a20a58f8ad16e1fcde4849db
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^1.11.1":
+  version: 1.13.0
+  resolution: "tslib@npm:1.13.0"
+  checksum: 0f8872783ef5fd98f84e01e108b27e952a465826ef2908d68a87eadf0857b699b745fb8078342a668dcf3b7bec823eff453424414fdd6e6cdac11a0d01f0043f
   languageName: node
   linkType: hard
 
