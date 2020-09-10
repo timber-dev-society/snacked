@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from './components/form/input'
 
 const App = () => (
   <div className="App">
@@ -6,14 +7,7 @@ const App = () => (
       <p>
         Edit <code>src/app.js</code> and save to reload.
       </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
+      <Input />
     </header>
   </div>
 );
