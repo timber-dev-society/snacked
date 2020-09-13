@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from './components/form/input'
+import Form, { Input, Button } from './components/form'
 
 const App = () => (
   <div className="App">
@@ -7,7 +7,11 @@ const App = () => (
       <p>
         Edit <code>src/app.js</code> and save to reload.
       </p>
-      <Input />
+      <Form>
+        <Input name="login" />
+        <Input name="password" />
+        <Button>Send</Button>
+      </Form>
     </header>
   </div>
 );
