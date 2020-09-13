@@ -1,18 +1,16 @@
 import React, { cloneElement, useState }  from 'react'
+import PropTypes from 'prop-types'
 
 import Symbols from './symbols'
 import { Wrapper } from './wrapper'
-let i = 0
 
 export const Form = ({ children }) => {
-  
-  
+
   const [state, setState] = useState(() => {
     return children.filter(item => (item.type.kind === Symbols.input))
                    .map(item => ({ name: item.props.name, value: '' }))
   })
 
-  console.log(++i)
   const onSubmit = (event) => {
     event.preventDefault()
     console.log(state)
@@ -43,5 +41,10 @@ export const Form = ({ children }) => {
       })}
     </form>
   )
+}
+
+Form.propTypes = {
+  children: PropTypes.array,
+  onSubmit: PropTypes.func,
 }
 
