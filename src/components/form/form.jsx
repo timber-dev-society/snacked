@@ -1,44 +1,54 @@
-import React, { cloneElement, useState }  from 'react'
+import React, { cloneElement }  from 'react'
 import PropTypes from 'prop-types'
 
 import Symbols from './symbols'
 import { Wrapper } from './wrapper'
+import { useStore } from './store'
 
-export const Form = ({ children }) => {
+export const Form = ({ children, ...props }) => {
 
-  const [state, setState] = useState(() => {
-    return children.filter(item => (item.type.kind === Symbols.input))
-                   .map(item => ({ name: item.props.name, value: '' }))
-  })
+  const [ state, setState ] = useStore()
+
+  const renderChildren = (children) => {
+    return children.map((child, key) => {
+      if (!child.type.kind && child.props.children) {
+        if (child.props.children.type) {
+          return renderChildren([child.props.children])
+        }
+        return renderChildren(child.props.children)
+      }
+      
+      switch (child.type.kind) {
+        case Symbols.Inputs:
+          const inputProps = {
+            ...child.props,
+            handleChange: (value) => { setState(child.props.name, value ) },
+          }
+          setState(child.props.name, child.props.value ?? '')
+          return (<Wrapper key={child.props.name}>{cloneElement(child, inputProps)}</Wrapper>)
+        case Symbols.Submits:
+          const submitProps = {
+            ...child.props,
+            onClick: () => {
+             
+            },
+          };
+          return (<Wrapper key={key}>{cloneElement(child, submitProps)}</Wrapper>)
+        default:
+          return ''
+      }
+    })
+  }
 
   const onSubmit = (event) => {
     event.preventDefault()
-    console.log(state)
+
+    props.onSubmit(state)
   }
 
   return (
     <form onSubmit={onSubmit}>
-      {children.map((child, key) => {
-        switch (child.type.kind) {
-          case Symbols.Inputs:
-            const inputProps = {
-              ...child.props,
-              setState,
-              state,
-            };
-            return (<Wrapper key={child.props.name}>{ cloneElement(child, inputProps) }</Wrapper>)
-          case Symbols.Submits:
-            const submitProps = {
-              ...child.props,
-              onClick: () => {
-                console.log(state)
-              },
-            };
-            return (<Wrapper key={key}>{ cloneElement(child, submitProps) }</Wrapper>)
-          default:
-            return ''
-        }
-      })}
+      {renderChildren(children)}
     </form>
   )
 }

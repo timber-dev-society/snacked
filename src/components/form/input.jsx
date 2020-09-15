@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import Symbols from './symbols'
@@ -9,24 +9,24 @@ const style = {
 }
 
 export const Input = ({ name, ...props }) => {
-  console.log(props)
+
+  const [ value, setValue ] = useState(() => (props.value ?? ''))
 
   return (
     <input
       name={name}
       style={style}
       type="text" 
-      value={props.state[name]?.value}
+      value={value}
       placeholder=''
+      onSubmit={() => console.log('submit')}
       onChange={(event) => {
-        props.setState({
-          ...props.state,
-          [name]: event.target.value
-        })
+        setValue(event.target.value)
+        props.handleChange(event.target.value)
       }} 
     />
-  );
-};
+  )
+}
 
 Input.kind = Symbols.Inputs
 

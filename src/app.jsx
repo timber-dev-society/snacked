@@ -7,7 +7,7 @@ const App = () => (
       <p>
         Edit <code>src/app.js</code> and save to reload.
       </p>
-      <Form>
+      <Form onSubmit={(data) => console.log(data)}>
         <Input name="login" />
         <Input name="password" />
         <Button>Send</Button>
