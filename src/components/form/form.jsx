@@ -10,6 +10,7 @@ export const Form = ({ children, ...props }) => {
   const [ state, setState ] = useStore()
 
   const renderChildren = (children) => {
+    if (typeof children === 'string') { return children }
     return children.map((child, key) => {
       if (!child.type.kind && child.props.children) {
         if (child.props.children.type) {
@@ -22,18 +23,25 @@ export const Form = ({ children, ...props }) => {
         case Symbols.Inputs:
           const inputProps = {
             ...child.props,
-            handleChange: (value) => { setState(child.props.name, value ) },
+            handleChange: (value) => { setState(child.props.name, value) },
           }
           setState(child.props.name, child.props.value ?? '')
           return (<Wrapper key={child.props.name}>{cloneElement(child, inputProps)}</Wrapper>)
         case Symbols.Submits:
           const submitProps = {
             ...child.props,
-            onClick: () => {
-             
-            },
+            onClick: () => { },
           };
           return (<Wrapper key={key}>{cloneElement(child, submitProps)}</Wrapper>)
+        case Symbols.Validators:
+          console.log(Symbols.Validators)
+          const validatorProps = {
+            ...child.props,
+            handleChange: (value) => { console.log(value, 'hey'); setState(child.props.name, value) },
+          }
+          useStore.addValidator({ input: child.props.children.props.name, validator: child })
+
+          return (<Wrapper key={key}>{cloneElement(child, validatorProps)}</Wrapper>)
         default:
           return ''
       }
@@ -54,7 +62,6 @@ export const Form = ({ children, ...props }) => {
 }
 
 Form.propTypes = {
-  children: PropTypes.array,
-  onSubmit: PropTypes.func,
+  children: PropTypes.array.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 }
-

@@ -1,5 +1,5 @@
 import React from 'react';
-import Form, { Input, Button } from './components/form'
+import Form, { Input, Button, Validator} from './components/form'
 
 const App = () => (
   <div className="App">
@@ -8,7 +8,12 @@ const App = () => (
         Edit <code>src/app.js</code> and save to reload.
       </p>
       <Form onSubmit={(data) => console.log(data)}>
-        <Input name="login" />
+        
+        <p>
+          <Validator trigger="onChange" notEmpty>
+            <Input name="login" />
+          </Validator>
+        </p>
         <Input name="password" />
         <Button>Send</Button>
       </Form>
