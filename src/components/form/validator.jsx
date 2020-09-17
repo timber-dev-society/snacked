@@ -10,8 +10,11 @@ export const Validator = ({ children, ...props }) => {
   const inputProps = {
     ...children.props,
     handleChange: (value) => { 
-      console.log(value, 'hey hey')
-      props.handleChange(value) 
+      let isValid = true
+      if (props.regex) {
+        isValid = props.regex.test(value)
+      }
+      props.handleChange(value, isValid) 
     },
   }
   console.log('rendering validator')

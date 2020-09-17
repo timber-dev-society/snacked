@@ -10,7 +10,7 @@ const App = () => (
       <Form onSubmit={(data) => console.log(data)}>
         
         <p>
-          <Validator trigger="onChange" notEmpty>
+          <Validator trigger="onChange" regex={/\d+/} notEmpty>
             <Input name="login" />
           </Validator>
         </p>

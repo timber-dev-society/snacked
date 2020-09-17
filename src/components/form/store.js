@@ -1,16 +1,10 @@
 const internals = {}
 
 export const useStore = () => {
-  // const states = [];
   const state = {}
   internals.validators = []
 
-  const setState = (name, value) => {
-    const isValid = internals.validators.every(({ key, validate }) => {
-      console.log(validate)
-      if (key !== name) { return true }
-      return validate(value)
-    })
+  const setState = (name, value, isValid=true) => {
     Object.assign(state, {[name]: { value, isValid }})
   }
   

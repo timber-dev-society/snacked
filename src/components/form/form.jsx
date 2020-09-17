@@ -26,22 +26,26 @@ export const Form = ({ children, ...props }) => {
             handleChange: (value) => { setState(child.props.name, value) },
           }
           setState(child.props.name, child.props.value ?? '')
+
           return (<Wrapper key={child.props.name}>{cloneElement(child, inputProps)}</Wrapper>)
+
         case Symbols.Submits:
           const submitProps = {
             ...child.props,
             onClick: () => { },
-          };
+          }
+
           return (<Wrapper key={key}>{cloneElement(child, submitProps)}</Wrapper>)
+
         case Symbols.Validators:
-          console.log(Symbols.Validators)
           const validatorProps = {
             ...child.props,
-            handleChange: (value) => { console.log(value, 'hey'); setState(child.props.name, value) },
+            handleChange: (value, isValid) => { setState(child.props.name, value, isValid) },
           }
           useStore.addValidator({ input: child.props.children.props.name, validator: child })
 
           return (<Wrapper key={key}>{cloneElement(child, validatorProps)}</Wrapper>)
+
         default:
           return ''
       }
