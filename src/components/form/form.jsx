@@ -1,4 +1,4 @@
-import React, { cloneElement }  from 'react'
+import React, { cloneElement, useRef }  from 'react'
 import PropTypes from 'prop-types'
 
 import Symbols from './symbols'
@@ -8,15 +8,21 @@ import { useStore } from './store'
 export const Form = ({ children, ...props }) => {
 
   const [ state, setState ] = useStore()
+  const validatorRef = useRef()
 
   const renderChildren = (children) => {
     if (typeof children === 'string') { return children }
+
     return children.map((child, key) => {
+
       if (!child.type.kind && child.props.children) {
-        if (child.props.children.type) {
-          return renderChildren([child.props.children])
+        const children = child.props.children.type ? [child.props.children] : child.props.children
+        const props = {
+          ...child.props,
+          children,
         }
-        return renderChildren(child.props.children)
+        
+        return (<Wrapper key={key}>{cloneElement(child, props)}</Wrapper>)
       }
       
       switch (child.type.kind) {
@@ -40,20 +46,22 @@ export const Form = ({ children, ...props }) => {
         case Symbols.Validators:
           const validatorProps = {
             ...child.props,
-            handleChange: (value, isValid) => { setState(child.props.name, value, isValid) },
+            ref: validatorRef,
+            handleChange: (value, isValid) => { setState(child.props.children.props.name, value, isValid) },
           }
           useStore.addValidator({ input: child.props.children.props.name, validator: child })
 
           return (<Wrapper key={key}>{cloneElement(child, validatorProps)}</Wrapper>)
 
         default:
-          return ''
+          return ({child})
       }
     })
   }
 
   const onSubmit = (event) => {
     event.preventDefault()
+    console.log(validatorRef)
 
     props.onSubmit(state)
   }
