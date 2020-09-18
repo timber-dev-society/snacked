@@ -12658,6 +12658,13 @@ resolve@1.15.0:
   languageName: node
   linkType: hard
 
+"slugify@npm:^1.4.5":
+  version: 1.4.5
+  resolution: "slugify@npm:1.4.5"
+  checksum: a6435b99401030960a6b8930ff1ede65709598831709222bc718a2784a1eadaf858dc2850c1f0026dafce6e4d7a32a5cc1f65cf0f87c42324f8acaed26f72583
+  languageName: node
+  linkType: hard
+
 "snacked@workspace:.":
   version: 0.0.0-use.local
   resolution: "snacked@workspace:."
@@ -12674,6 +12681,7 @@ resolve@1.15.0:
     react-redux: ^7.2.1
     react-scripts: 3.4.3
     redux: ^4.0.5
+    slugify: ^1.4.5
   languageName: unknown
   linkType: soft
 
