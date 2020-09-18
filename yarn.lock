@@ -8865,6 +8865,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"lottie-web@npm:^5.7.0":
+  version: 5.7.3
+  resolution: "lottie-web@npm:5.7.3"
+  checksum: d6c17e0008104cf7a4d40f5d1facd19961532b6f8a24c22eb00378ea3bddd813f29f9f8df33d1715e87761b42c46e9a248a65be3261c574939107185657c5447
+  languageName: node
+  linkType: hard
+
 "lower-case@npm:^2.0.1":
   version: 2.0.1
   resolution: "lower-case@npm:2.0.1"
@@ -11562,6 +11569,18 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"react-lottie-player@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "react-lottie-player@npm:1.0.1"
+  dependencies:
+    lodash: ^4.17.19
+    lottie-web: ^5.7.0
+  peerDependencies:
+    react: ^16.0.0
+  checksum: 4d9be7ae739b02b2783b05ef92e91b0981699bef957cd0b5f716b29d94f9441aac0f29f218b874722d20bc64f7893ca807e406ae4b3d60d3975789e7b1f2ed18
+  languageName: node
+  linkType: hard
+
 "react-redux@npm:^7.2.1":
   version: 7.2.1
   resolution: "react-redux@npm:7.2.1"
@@ -12678,6 +12697,7 @@ resolve@1.15.0:
     react: ^16.13.1
     react-dom: ^16.13.1
     react-icons: ^3.11.0
+    react-lottie-player: ^1.0.1
     react-redux: ^7.2.1
     react-scripts: 3.4.3
     redux: ^4.0.5

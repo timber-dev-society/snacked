@@ -1,8 +1,10 @@
 import React from 'react';
 import Form, { Input, Button, Validator} from './components/form'
+import { Stack } from './assets/lottie/stack'
 
 const App = () => (
   <div className="App">
+    <Stack width={400} height={400} />
     <div className="App-header">
       <Form onSubmit={(data) => console.log(data)}>
         <p>
