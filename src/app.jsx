@@ -1,10 +1,11 @@
 import React from 'react';
 import Form, { Input, Button, Validator} from './components/form'
-import { Stack } from './assets/lottie/stack'
+import { OneTimeOver } from './assets/lottie/one-time-over'
+import animationData from './assets/lottie/json/hotdog.json'
 
 const App = () => (
   <div className="App">
-    <Stack width={400} height={400} />
+    <OneTimeOver animationData={animationData} style={{width: '200px', height: '200px'}} />
     <div className="App-header">
       <Form onSubmit={(data) => console.log(data)}>
         <p>
