@@ -8,7 +8,7 @@ const Card = ({card}) => (
     <div className="px-6 py-4">
       <div className="flex justify-center items-center">
         <div className="font-bold text-xl text-teal-700">{card.title}</div>
-        <a href="#" className="ml-1 text-gray-600 hover:text-gray-900"><FiEdit2/></a>
+        <a href="#" className="ml-1 text-gray-600 hover:text-gray-900 hover:text-teal-500"><FiEdit2/></a>
       </div>
 
       <div className="resources">
