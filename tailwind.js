@@ -248,6 +248,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Epilogue',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
