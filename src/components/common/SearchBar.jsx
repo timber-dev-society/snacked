@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiSearchAlt } from 'react-icons/bi'
+import { VscClose } from 'react-icons/vsc'
 
 export default () => (
   <div className="searchbar my-3">
@@ -12,10 +13,19 @@ export default () => (
       <input className="text-2xl shadow appearance-none border pl-10 p-3 rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="q" type="text" placeholder="Recherche" />
     </div>
 
-    <div className="my-2">
-      <a href="#" className="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">#react</a>
-      <a href="#" className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ruby</a>
-      <a href="#" className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#awesome</a>
+    <div className="flex items-center my-2">
+      <div className="flex items-center bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2">
+        <div className="text-sm font-semibold text-gray-700 ">#react</div>
+        <a href="#"><VscClose/></a>
+      </div>
+      <div className="flex items-center bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2">
+        <div className="text-sm font-semibold text-gray-700 ">#rubyonrails</div>
+        <a href="#"><VscClose/></a>
+      </div>
+      <div className="flex items-center bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2">
+        <div className="text-sm font-semibold text-gray-700 ">#animation</div>
+        <a href="#"><VscClose/></a>
+      </div>
     </div>
   </div>
 );
