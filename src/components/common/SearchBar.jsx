@@ -1,6 +1,7 @@
 import React from 'react'
 import { BiSearchAlt } from 'react-icons/bi'
 import { VscClose } from 'react-icons/vsc'
+import Tag from '../tag/Tag'
 
 export default () => (
   <div className="searchbar my-3">
@@ -14,18 +15,9 @@ export default () => (
     </div>
 
     <div className="flex items-center my-2">
-      <div className="flex items-center bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2">
-        <div className="text-sm font-semibold text-gray-700 ">#react</div>
-        <a href="#"><VscClose/></a>
-      </div>
-      <div className="flex items-center bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2">
-        <div className="text-sm font-semibold text-gray-700 ">#rubyonrails</div>
-        <a href="#"><VscClose/></a>
-      </div>
-      <div className="flex items-center bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2">
-        <div className="text-sm font-semibold text-gray-700 ">#animation</div>
-        <a href="#"><VscClose/></a>
-      </div>
+      <Tag name="react" />
+      <Tag name="rubyonrails" />
+      <Tag name="awesome" />
     </div>
   </div>
 );
