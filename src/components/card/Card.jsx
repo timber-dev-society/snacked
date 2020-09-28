@@ -3,7 +3,7 @@ import List from '../list/List'
 import { IoMdAdd } from 'react-icons/io'
 import { FiEdit2 } from 'react-icons/fi'
 
-const Card = ({card, setModalShow}) => (
+const Card = ({card, setModalShow, setSelectedResource}) => (
   <div className="max-w-md rounded overflow-hidden shadow-lg mx-auto md:mx-none">
     <div className="px-6 py-4">
       <div className="flex justify-center items-center">
@@ -12,7 +12,7 @@ const Card = ({card, setModalShow}) => (
       </div>
 
       <div className="resources">
-        {card.resources.map( resource => <List resource={resource} setModalShow={setModalShow} /> )}
+        {card.resources.map( resource => <List resource={resource} setModalShow={setModalShow} setSelectedResource={setSelectedResource} /> )}
       </div>
 
       <div className="text-center my-2">
